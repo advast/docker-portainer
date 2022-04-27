@@ -41,7 +41,7 @@ docker stop portainer
 ```
 docker rm portainer
 ```
-拉取新版本映象（以社区版-ce2.11.1版本为例）：   
+拉取新版本映象（以社区版 ce2.11.1版本为例）：   
 ```
 docker pull portainer/portainer-ce:2.11.1
 ```
