@@ -23,9 +23,9 @@ systemctl status docker
 systemctl enable docker
 ```
    
-## Portainer安装
+## Portainer安装   
 首先在/root 文件夹内新建目录/portainer   
-然后拉取映像：
+然后拉取映像：   
 ```
 docker pull portainer/portainer
 ```
@@ -33,5 +33,19 @@ docker pull portainer/portainer
 ```
 docker run -d -p 9000:9000 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:2.11.1
 ```
-Portainer更新命令参考官网说明文档：
+Portainer更新命令和官网说明文档地址：  
+停止和删除portainer：   
+```
+docker stop portainer
+docker rm portainer
+```
+拉取新版本映象（以2.11.1版本为例）：   
+```
+docker pull portainer/portainer-ce:2.11.1
+```
+部署新版本：   
+```
+docker run -d -p 8000:8000 -p 9000:9000 -p 9443:9443 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:2.11.1
+```
+官网说明文档地址：   
 https://docs.portainer.io/v/ce-2.11/start/upgrade/docker
