@@ -1,5 +1,5 @@
 ## Docker安装
-安装命令二选一即可
+安装命令二选一即可   
 CentOS / Debian / Ubuntu 一键安装 Docker 的命令是一样的，都 Docker 官方提供：
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh
