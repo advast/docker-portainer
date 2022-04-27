@@ -1,37 +1,35 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/advast/docker-portainer/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+## Docker安装
+安装命令二选一即可
+CentOS / Debian / Ubuntu 一键安装 Docker 的命令是一样的，都 Docker 官方提供：
 ```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/advast/docker-portainer/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+```
+Ubuntu 大陆地区的daocloud一键安装命令 安装docker：
+```
+sudo curl -sSL https://get.daocloud.io/docker | sh
+```
+   
+启动docker：
+```
+systemctl start docker
+```
+查看docker服务状态：
+```
+systemctl status docker
+```
+设置docker开机自启：
+```
+systemctl enable docker
+```
+   
+## Portainer安装
+首先在/root 文件夹内新建目录/portainer   
+然后拉取映像：
+```
+docker pull portainer/portainer
+```
+创建并运行：
+```
+docker run -d -p 9000:9000 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:2.11.1
+```
