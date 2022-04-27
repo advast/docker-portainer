@@ -37,6 +37,8 @@ Portainer更新命令和官网说明文档地址：
 停止和删除portainer：   
 ```
 docker stop portainer
+```
+```
 docker rm portainer
 ```
 拉取新版本映象（以2.11.1版本为例）：   
