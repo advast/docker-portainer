@@ -29,7 +29,9 @@ systemctl enable docker
 ```
 docker pull portainer/portainer
 ```
-创建并运行：
+创建并运行portainer：
 ```
 docker run -d -p 9000:9000 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:2.11.1
 ```
+Portainer更新命令参考官网说明文档：
+https://docs.portainer.io/v/ce-2.11/start/upgrade/docker
